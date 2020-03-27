@@ -1,4 +1,4 @@
-# deneme_xox
+# XOX_GAME
 
 A new Flutter application.
 
