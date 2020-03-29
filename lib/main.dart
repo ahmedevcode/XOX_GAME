@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 /*
 *
-*
-* creator github.com/erayhamurlu
+* creator => github.com/erayhamurlu
 *
 */
 
@@ -27,16 +26,17 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int deger = 3; //tekler x
-  String a1 = "";
-  String a2 = "";
-  String a3 = "";
-  String a4 = "";
-  String a5 = "";
-  String a6 = "";
-  String a7 = "";
-  String a8 = "";
-  String a9 = "";
-
+  var buttons = ['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9'];
+  _MyHomePageState(){
+    for(int i=0;i<9;i++){
+      buttons[i]='';
+    }
+  }
+  void btn_temizle(){
+    for(int i=0;i<9;i++){
+      buttons[i]='';
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,31 +53,31 @@ class _MyHomePageState extends State<MyHomePage> {
                     minWidth: 100,
                     height: 100,
                     child: RaisedButton(
-                        child: Text(a1,
+                        child: Text(buttons[0],
                           style: TextStyle(
                             fontSize: 40,
                           ),
                         ),
-                      onPressed: () {a1 = Click(deger);},)
+                      onPressed: () {buttons[0] = Click(deger);},)
                 ),
                 ButtonTheme(
                     minWidth: 100,
                     height: 100,
                     child: RaisedButton(
-                        child: Text(a2,
+                        child: Text(buttons[1],
                           style: TextStyle(
                             fontSize: 40,
                           ),),
-                      onPressed: () {a2 = Click(deger);},)),
+                      onPressed: () {buttons[1] = Click(deger);},)),
                 ButtonTheme(
                     minWidth: 100,
                     height: 100,
                     child: RaisedButton(
-                        child: Text(a3,
+                        child: Text(buttons[2],
                           style: TextStyle(
                             fontSize: 40,
                           ),),
-                      onPressed: () {a3 = Click(deger);},)),
+                      onPressed: () {buttons[2] = Click(deger);},)),
               ],
             ),
             Row(
@@ -87,29 +87,29 @@ class _MyHomePageState extends State<MyHomePage> {
                     minWidth: 100,
                     height: 100,
                     child: RaisedButton(
-                        child: Text(a4,
+                        child: Text(buttons[3],
                           style: TextStyle(
                             fontSize: 40,
                           ),),
-                      onPressed: () {a4 = Click(deger);},)),
+                      onPressed: () {buttons[3] = Click(deger);},)),
                 ButtonTheme(
                     minWidth: 100,
                     height: 100,
                     child: RaisedButton(
-                        child: Text(a5,
+                        child: Text(buttons[4],
                           style: TextStyle(
                             fontSize: 40,
                           ),),
-                      onPressed: () {a5 = Click(deger);},)),
+                      onPressed: () {buttons[4] = Click(deger);},)),
                 ButtonTheme(
                     minWidth: 100,
                     height: 100,
                     child: RaisedButton(
-                        child: Text(a6,
+                        child: Text(buttons[5],
                           style: TextStyle(
                             fontSize: 40,
                           ),),
-                      onPressed: () {a6 = Click(deger);},)),
+                      onPressed: () {buttons[5] = Click(deger);},)),
               ],
             ),
             Row(
@@ -119,30 +119,30 @@ class _MyHomePageState extends State<MyHomePage> {
                     minWidth: 100,
                     height: 100,
                     child: RaisedButton(
-                        child: Text(a7,
+                        child: Text(buttons[6],
                           style: TextStyle(
                             fontSize: 40,
                           ),),
-                      onPressed: () {a7 = Click(deger);},
+                      onPressed: () {buttons[6] = Click(deger);},
                     )),
                 ButtonTheme(
                     minWidth: 100,
                     height: 100,
                     child: RaisedButton(
-                        child: Text(a8,
+                        child: Text(buttons[7],
                           style: TextStyle(
                             fontSize: 40,
                           ),),
-                      onPressed: () {a8 = Click(deger);},)),
+                      onPressed: () {buttons[7] = Click(deger);},)),
                 ButtonTheme(
                     minWidth: 100,
                     height: 100,
                     child: RaisedButton(
-                        child: Text(a9,
+                        child: Text(buttons[8],
                           style: TextStyle(
                             fontSize: 40,
                           ),),
-                      onPressed: () {a9 = Click(deger);},)),
+                      onPressed: () {buttons[8] = Click(deger);},)),
               ],),
             SizedBox(height: 30,),
             Row(
@@ -154,15 +154,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: Text('New Game'),
                         onPressed: () {
                           setState(() {
-                            a1 = "";
-                            a2 = "";
-                            a3 = "";
-                            a4 = "";
-                            a5 = "";
-                            a6 = "";
-                            a7 = "";
-                            a8 = "";
-                            a9 = "";
+                            btn_temizle();
                           });
                         }),
                   ),
