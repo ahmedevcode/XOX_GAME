@@ -1,5 +1,7 @@
 # Flutter XOX Game
 
+### Screenshots
+
 <img src="images/1.png" alt="Smiley face" height="720" width="360"> <img src="images/2.png" alt="Smiley face" height="720" width="360">
 
 ### Created & Maintained By
