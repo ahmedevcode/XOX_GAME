@@ -32,7 +32,7 @@ class _MyHomePageState extends State<MyHomePage> {
       buttons[i]='';
     }
   }
-  void btn_temizle(){
+  void btnTemizle(){
     for(int i=0;i<9;i++){
       buttons[i]='';
     }
@@ -49,100 +49,24 @@ class _MyHomePageState extends State<MyHomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                ButtonTheme(
-                    minWidth: 100,
-                    height: 100,
-                    child: RaisedButton(
-                        child: Text(buttons[0],
-                          style: TextStyle(
-                            fontSize: 40,
-                          ),
-                        ),
-                      onPressed: () {buttons[0] = Click(deger);},)
-                ),
-                ButtonTheme(
-                    minWidth: 100,
-                    height: 100,
-                    child: RaisedButton(
-                        child: Text(buttons[1],
-                          style: TextStyle(
-                            fontSize: 40,
-                          ),),
-                      onPressed: () {buttons[1] = Click(deger);},)),
-                ButtonTheme(
-                    minWidth: 100,
-                    height: 100,
-                    child: RaisedButton(
-                        child: Text(buttons[2],
-                          style: TextStyle(
-                            fontSize: 40,
-                          ),),
-                      onPressed: () {buttons[2] = Click(deger);},)),
-              ],
+                buttonTheme(0),
+                buttonTheme(1),
+                buttonTheme(2),
+                ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                ButtonTheme(
-                    minWidth: 100,
-                    height: 100,
-                    child: RaisedButton(
-                        child: Text(buttons[3],
-                          style: TextStyle(
-                            fontSize: 40,
-                          ),),
-                      onPressed: () {buttons[3] = Click(deger);},)),
-                ButtonTheme(
-                    minWidth: 100,
-                    height: 100,
-                    child: RaisedButton(
-                        child: Text(buttons[4],
-                          style: TextStyle(
-                            fontSize: 40,
-                          ),),
-                      onPressed: () {buttons[4] = Click(deger);},)),
-                ButtonTheme(
-                    minWidth: 100,
-                    height: 100,
-                    child: RaisedButton(
-                        child: Text(buttons[5],
-                          style: TextStyle(
-                            fontSize: 40,
-                          ),),
-                      onPressed: () {buttons[5] = Click(deger);},)),
-              ],
-            ),
+                buttonTheme(3),
+                buttonTheme(4),
+                buttonTheme(5),
+            ]),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                ButtonTheme(
-                    minWidth: 100,
-                    height: 100,
-                    child: RaisedButton(
-                        child: Text(buttons[6],
-                          style: TextStyle(
-                            fontSize: 40,
-                          ),),
-                      onPressed: () {buttons[6] = Click(deger);},
-                    )),
-                ButtonTheme(
-                    minWidth: 100,
-                    height: 100,
-                    child: RaisedButton(
-                        child: Text(buttons[7],
-                          style: TextStyle(
-                            fontSize: 40,
-                          ),),
-                      onPressed: () {buttons[7] = Click(deger);},)),
-                ButtonTheme(
-                    minWidth: 100,
-                    height: 100,
-                    child: RaisedButton(
-                        child: Text(buttons[8],
-                          style: TextStyle(
-                            fontSize: 40,
-                          ),),
-                      onPressed: () {buttons[8] = Click(deger);},)),
+                buttonTheme(6),
+                buttonTheme(7),
+                buttonTheme(8),
               ],),
             SizedBox(height: 30,),
             Row(
@@ -154,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: Text('New Game'),
                         onPressed: () {
                           setState(() {
-                            btn_temizle();
+                            btnTemizle();
                           });
                         }),
                   ),
@@ -176,4 +100,16 @@ class _MyHomePageState extends State<MyHomePage> {
       return "O";
     }
   }
+  ButtonTheme buttonTheme(int butonNo){
+    return ButtonTheme(
+        minWidth: 100,
+        height: 100,
+        child: RaisedButton(
+          child: Text(buttons[butonNo],
+            style: TextStyle(
+              fontSize: 40,
+            ),),
+          onPressed: () {buttons[butonNo] = Click(deger);},));
+  }
+
 }
