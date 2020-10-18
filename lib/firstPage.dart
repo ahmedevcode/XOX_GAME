@@ -12,28 +12,57 @@ class FirstPage extends StatefulWidget{
 
 class _FirstPage extends State with UserValidationMixin{
   String user;
+  var formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: Text("XOX Game"),),
       body: Container(
         margin: EdgeInsets.all(20.0),
         child: Form(
+          key: formKey,
             child: Column(
               children: <Widget>[
-                TextFormField(
-                  decoration: InputDecoration(labelText: "Nickname"),
-                  validator: validateNickName,
-                  onSaved: (String value){
-                    user = value;
-                  },
-                ),
-                RaisedButton(onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>GamePage()));
-                }),
+                buildNickNameField(),
+                buildSubmitButton(),
               ],
             ),
         ),
       ),
     );
   }
+  Widget buildNickNameField(){
+    return TextFormField(
+      decoration: InputDecoration(labelText: "Nickname"),
+      validator: validateNickName,
+      onSaved: (String value){
+        user = value;
+      },
+    );
+  }
+
+  Widget buildSubmitButton() {
+    return RaisedButton(
+        child: Text("Kaydet"),
+        onPressed: (){
+          if(formKey.currentState.validate()){
+            formKey.currentState.save();
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>GamePage()));
+            print(user);
+          }
+        });
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
